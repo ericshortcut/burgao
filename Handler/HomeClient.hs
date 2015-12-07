@@ -5,7 +5,7 @@ import Database.Persist.Postgresql
 
 getHomeClientR :: Handler Html
 getHomeClientR = do
-                userName <- lookupSession "userName"
+                userName <- lookupSession "_ID"
                 case userName of
                     Nothing -> do
                         setMessage "Saiu do sistema"

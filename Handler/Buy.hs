@@ -9,8 +9,11 @@ getBuyR productId = do
                 clientId <- lookupSession "_ID"
                 case clientId of 
                     Just cid -> do
-                        _ <- runDB $ insert (Buy productId  (toSqlKey (idTransform cid)) Open)
+                        -- _ <- runDB $ insert (genData cid)
                         return "Produto adicionado"
                     _ -> redirect HomeR
 
-                    where idTransform c = P.read (show c)::Int64
+                    -- where idTransform c = ((show c)::Int)
+                          -- genData b = (Buy productId  (toSqlKey (idTransform b)) Open)
+
+

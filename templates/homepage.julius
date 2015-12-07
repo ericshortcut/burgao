@@ -11,10 +11,10 @@ $(function() {
             contentType: "application/text",
             data: null,
             success: function (data) {
-              alert("foi -->>" + data);
+              alert("Adicionado");
             },
             error: function (data) {
-              alert("Não foi -->>" + data);
+              alert("Erro");
             },
           });
       };
