@@ -2,6 +2,9 @@ module Handler.SignUp where
 
 import Import
 import Handler.Home (widgetForm)
+import Data.Time
+import Data.Time.Clock.POSIX
+import System.IO.Unsafe
 
 getSignUpR :: Handler Html
 getSignUpR = do
@@ -23,7 +26,9 @@ postSignUpR = do
 
 loginForm::Form User
 loginForm =  renderDivs $ User
-                       <$> lift (return "")
+                       <$> (lift (return (pack ccid)))
                        <*> areq textField "Nome" Nothing
                        <*> areq textField "E-mail" Nothing
                        <*> areq passwordField "Senha" Nothing
+                       where ccid = ( show (unsafePerformIO getPOSIXTime))
+

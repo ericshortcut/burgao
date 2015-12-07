@@ -11,6 +11,8 @@ import Yesod.Core.Types     (Logger)
 import qualified Yesod.Core.Unsafe as Unsafe
 import qualified Data.CaseInsensitive as CI
 import qualified Data.Text.Encoding as TE
+import  Text.Lucius
+import  Text.Julius
 
 -- | The foundation datatype for your application. This can be a good place to
 -- keep settings and values requiring initialization before your application
@@ -77,6 +79,8 @@ instance Yesod App where
 
         pc <- widgetToPageContent $ do
             -- addStylesheet $ StaticR css_bootstrap_css
+            toWidget $(luciusFile "templates/homepage.lucius")
+            toWidget $(juliusFile "templates/homepage.julius")
             $(widgetFile "default-layout")
         withUrlRenderer $(hamletFile "templates/default-layout-wrapper.hamlet")
 

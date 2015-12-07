@@ -1,6 +1,7 @@
 module Handler.Home where
 
 import Import
+import Database.Persist.Postgresql
 
 getHomeR :: Handler Html
 getHomeR = do
@@ -15,7 +16,7 @@ postHomeR = do
                 user <- runDB $ selectFirstUser usuarioForm
                 case user of
                     Just (Entity uid userDB) -> do
-                        setSession "_ID" $ (pack . show) uid
+                        setSession "_ID" $ pack ( show $ fromSqlKey uid)
                         setSession "userName" $ (pack . show . userName)  userDB
                         setSession "userEmail" $ (pack . show . userEmail)  userDB
                         putStrLn $ (pack .show )  uid

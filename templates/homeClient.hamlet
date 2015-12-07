@@ -3,8 +3,10 @@
 
 $if (<) 0 (length beverages)
     <ul>
-    $forall Entity _ beverage <- beverages
+    $forall Entity bid beverage <- beverages
         <li> #{ productName beverage }
+            <span> #{ productPrice beverage }
+            <button class="buy" data-buy=#{ fromSqlKey bid }> +
 $else
     <ul>
         <li> Nenhuma bebida cadastrada
@@ -13,8 +15,10 @@ $else
 
 $if (<) 0 (length sandwiches)
     <ul>
-    $forall Entity _ sandwich <- sandwiches
+    $forall Entity sid sandwich <- sandwiches
         <li> #{ productName sandwich }
+            <span> #{ productPrice sandwich }
+            <button class="buy" data-buy=#{ show sid }> +
 $else
     <ul>
         <li> Nenhum Sanduíche cadastrado
@@ -22,8 +26,10 @@ $else
 
 $if (<) 0 (length desserts)
     <ul>
-    $forall Entity _ dessert <- desserts
+    $forall Entity did dessert <- desserts
         <li> #{ productName dessert }
+            <span> #{ productPrice dessert }
+            <button class="buy" data-buy=#{ show did }> +
 $else
     <ul>
         <li> Nenhuma Sobremesa cadastrada
@@ -31,8 +37,10 @@ $else
 
 $if (<) 0 (length servings)
     <ul>
-    $forall Entity _ serving <- servings
+    $forall Entity sid serving <- servings
         <li> #{ productName serving }
+            <span> #{ productPrice serving }
+            <button class="buy" data-buy=#{ show sid }> +
 $else
     <ul>
         <li> Nenhuma porção cadastrada

@@ -9,3 +9,4 @@
 /cadastro SignUpR GET POST
 /sair GetOutR GET
 /registro-de-produto ProductRegistrationR GET POST
+/buy/#ProductId BuyR GET

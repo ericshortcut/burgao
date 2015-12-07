@@ -3,7 +3,7 @@ User
     name Text
     email Text
     password Text
-    UniqueUser ident
+    UniqueUser email
     UniqueEmail email
     deriving Show
     deriving Eq
@@ -14,6 +14,11 @@ Product
     price Double
     productType ProductType
     deriving Show
+
+Buy
+    productId ProductId
+    cliendId UserId
+    billingStatus BillingStatus
 
 Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived.
     message Text

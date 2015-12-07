@@ -1,6 +1,7 @@
 module Handler.HomeClient where
 
 import Import
+import Database.Persist.Postgresql
 
 getHomeClientR :: Handler Html
 getHomeClientR = do

@@ -2,6 +2,7 @@ module Handler.ProductRegistration where
 
 import Import
 import Handler.Home (widgetForm)
+import Database.Persist.Postgresql
 
 getProductRegistrationR :: Handler Html
 getProductRegistrationR = do
@@ -29,23 +30,3 @@ productForm =  renderDivs $ Product
           where 
             pts::[(Text,ProductType)]
             pts = [("Bebiba",Beverage),("Sanduíche",Sandwich),("Sobremesa",Dessert),("Porção",Serving)]
--- <*> aopt (selectFieldList colors) "Color" (carColor <$> mcar)
---   where
---     colors :: [(Text, Color)]
---     colors = [("Red", Red), ("Blue", Blue), ("Gray", Gray), ("Black", Black)]
-
--- ProductType
---     Beverage
---     Sandwich
---     Dessert
---     Serving
---     deriving Show
-
-
--- Product
---     ident Text x
---     name Text x
---     price Double x
---     productType ProductType
---     UniqueProduct ident
---     deriving Show
