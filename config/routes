@@ -1,0 +1,11 @@
+/static StaticR Static appStatic
+/auth   AuthR   Auth   getAuth
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/ HomeR GET POST
+/cardapio HomeClientR GET POST
+/cadastro SignUpR GET POST
+/sair GetOutR GET
+/registro-de-produto ProductRegistrationR GET POST

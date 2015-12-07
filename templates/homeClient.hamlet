@@ -1,0 +1,38 @@
+<h1>hello #{user}
+<a href=@{GetOutR}>Sair
+
+$if (<) 0 (length beverages)
+    <ul>
+    $forall Entity _ beverage <- beverages
+        <li> #{ productName beverage }
+$else
+    <ul>
+        <li> Nenhuma bebida cadastrada
+
+
+
+$if (<) 0 (length sandwiches)
+    <ul>
+    $forall Entity _ sandwich <- sandwiches
+        <li> #{ productName sandwich }
+$else
+    <ul>
+        <li> Nenhum Sanduíche cadastrado
+
+
+$if (<) 0 (length desserts)
+    <ul>
+    $forall Entity _ dessert <- desserts
+        <li> #{ productName dessert }
+$else
+    <ul>
+        <li> Nenhuma Sobremesa cadastrada
+
+
+$if (<) 0 (length servings)
+    <ul>
+    $forall Entity _ serving <- servings
+        <li> #{ productName serving }
+$else
+    <ul>
+        <li> Nenhuma porção cadastrada
